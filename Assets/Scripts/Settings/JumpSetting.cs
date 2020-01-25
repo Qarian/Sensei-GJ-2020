@@ -35,7 +35,7 @@ namespace SenseiGameJam.SettingsPack
 
         public void StartSetting()
         {
-            throw new System.NotImplementedException();
+            value = KeyCode.None;
         }
 
         public void UpdateSetting()
