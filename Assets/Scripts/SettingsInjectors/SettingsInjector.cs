@@ -12,8 +12,19 @@ namespace SenseiGameJam.SettingsInjectorsPack
         // Start is called before the first frame update
         void Start()
         {
+            FindOrCreateSettings();
             CreateSettings();
             StartSettings();
+        }
+
+        void FindOrCreateSettings()
+        {
+            settings = GameObject.FindObjectOfType<Settings>();
+            if(settings == null)
+            {
+                GameObject settingsObject = new GameObject("Settings", components: typeof(Settings));
+                settings = settingsObject.GetComponent<Settings>();
+            }
         }
 
         void CreateSettings()
