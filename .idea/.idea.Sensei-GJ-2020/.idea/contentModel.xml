@@ -6,8 +6,10 @@
     <e p="D:\dokumenty\unity projects\sensei2020\Sensei-GJ-2020" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Jump.cs" t="Include" />
+        <e p="ButtonManager.cs" t="Include" />
+        <e p="ChangeBrightness.cs" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="Jump.cs" t="Include" />
           <e p="Settings" t="Include">
             <e p="BlurSetting.cs" t="Include" />
             <e p="CatsSetting.cs" t="Include" />
