@@ -42,7 +42,7 @@ namespace SenseiGameJam.SettingsPack
         public void SetValue(Resolution value)
         {
             this.value = value;
-            material.SetFloat("Size", (float) value);
+            material.SetFloat("_Size", (float) value);
         }
 
         public void SetMaterial(Material material)

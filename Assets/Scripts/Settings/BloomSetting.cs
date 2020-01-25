@@ -10,14 +10,7 @@ namespace SenseiGameJam.SettingsPack
         [SerializeField]
         float value = 0;
 
-        [SerializeField]
-        PostProcessProfile profile;
-
-        private void Start()
-        {
-            profile.GetSetting<Bloom>().intensity.value = value;
-            
-        }
+        [SerializeField] private PostProcessProfile profile;
 
         public void FixedUpdateSetting()
         {
