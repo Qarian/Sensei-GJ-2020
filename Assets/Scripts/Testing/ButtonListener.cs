@@ -5,6 +5,7 @@ using System;
 using UnityEngine.UI;
 using SenseiGameJam.DependencyInjection;
 using SenseiGameJam.SettingsPack;
+using TMPro;
 
 public class ButtonListener : MonoBehaviour
 {
@@ -14,12 +15,12 @@ public class ButtonListener : MonoBehaviour
     Coroutine listenCoroutine;
     [SerializeField]
     KeyCode code;
-    Text text;
+    TextMeshProUGUI text;
 
     void Start()
     {
         listenCoroutine = null;
-        text = GetComponentInChildren<Text>();
+        text = GetComponentInChildren<TextMeshProUGUI>();
         SetDI();
         text.text = settings.input.jump.GetValue().ToString();
     }
