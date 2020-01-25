@@ -10,7 +10,13 @@ namespace SenseiGameJam.SettingsPack
         [SerializeField]
         float value = 0;
 
-        [SerializeField] private PostProcessProfile profile;
+        [SerializeField]
+        private PostProcessProfile profile;
+
+        private void Start()
+        {
+            profile = Resources.Load("PostProcessing/Post-processing Profile", typeof(PostProcessProfile)) as PostProcessProfile;
+        }
 
         public void FixedUpdateSetting()
         {
@@ -50,7 +56,7 @@ namespace SenseiGameJam.SettingsPack
 
         public void UpdateSetting()
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
     }
 }
