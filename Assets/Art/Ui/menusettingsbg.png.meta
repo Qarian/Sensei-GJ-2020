@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: a4a54ac779d687d41ad28b3e538a71f3
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4933343413335651760
+    second: menusettingsbg_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
@@ -84,7 +87,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: menusettingsbg_0
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 41
+        width: 1887
+        height: 1937
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 166, y: 146, z: 202, w: 117}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ef542a32478ef468b3401242786c0d
+      internalID: 4933343413335651760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
