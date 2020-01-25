@@ -7,7 +7,7 @@ namespace SenseiGameJam.SettingsPack
     public class ResolutionSetting : MonoBehaviour, ISetting<Resolution>
     {
         [SerializeField]
-        Resolution value;
+        Resolution value = Resolution.Screen_640x480;
 
         [SerializeField]
         Material material = default;
