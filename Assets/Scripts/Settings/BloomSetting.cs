@@ -56,7 +56,7 @@ namespace SenseiGameJam.SettingsPack
 
         public void UpdateSetting()
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
     }
 }
