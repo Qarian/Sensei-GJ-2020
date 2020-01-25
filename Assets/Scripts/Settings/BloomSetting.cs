@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 namespace SenseiGameJam.SettingsPack
 {
@@ -8,6 +9,8 @@ namespace SenseiGameJam.SettingsPack
     {
         [SerializeField]
         float value = 0;
+
+        [SerializeField] private PostProcessProfile profile;
 
         public void FixedUpdateSetting()
         {
@@ -32,6 +35,12 @@ namespace SenseiGameJam.SettingsPack
         public void SetValue(float value)
         {
             this.value = value;
+            profile.GetSetting<Bloom>().intensity.value = value;
+        }
+
+        public void SetProfile(PostProcessProfile profile)
+        {
+            this.profile = profile;
         }
 
         public void StartSetting()

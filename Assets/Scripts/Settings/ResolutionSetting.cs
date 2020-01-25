@@ -10,12 +10,12 @@ namespace SenseiGameJam.SettingsPack
         Resolution value = Resolution.Screen_640x480;
 
         [SerializeField]
-        Material material = default;
+        Material material;
 
         private void Start()
         {
-            Debug.Log(value);
-            Debug.Log((float)value);
+            material = Resources.Load("Material/Blur", typeof(Material)) as Material;
+            Debug.Log(material);
             material.SetFloat("_Size", (float)value);
         }
 
@@ -42,7 +42,12 @@ namespace SenseiGameJam.SettingsPack
         public void SetValue(Resolution value)
         {
             this.value = value;
-            material.SetFloat("Size", (float) value);
+            material.SetFloat("_Size", (float) value);
+        }
+
+        public void SetMaterial(Material material)
+        {
+            this.material = material;
         }
 
         public void StartSetting()
