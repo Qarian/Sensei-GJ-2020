@@ -6,7 +6,7 @@ namespace SenseiGameJam.SettingsPack
 {
     public class JumpSetting : MonoBehaviour, ISetting<KeyCode>
     {
-        KeyCode value;
+        KeyCode value = KeyCode.None;
 
         public void FixedUpdateSetting()
         {
@@ -40,7 +40,7 @@ namespace SenseiGameJam.SettingsPack
 
         public void UpdateSetting()
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }

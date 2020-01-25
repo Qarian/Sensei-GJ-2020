@@ -20,7 +20,7 @@ public class Bounce : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            _rb.velocity = Random.Range(bounceHeightMin,bounceHeightMax) * Vector2.up;
+            _rb.velocity = Random.Range(bounceHeightMin, bounceHeightMax) * Vector2.up;
         }
     }
 }
