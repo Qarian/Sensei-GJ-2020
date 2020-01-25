@@ -6,26 +6,29 @@ using UnityEditor;
 using UnityEngine;
 
 
-public class DropDownSettings : MonoBehaviour
-{
-    private Settings settings;
-    private TMP_Dropdown tmpDropdown;
-
-    private void Start()
+    public class DropDownSettings : MonoBehaviour
     {
-        IDependency dependency;
-        DI.GetSingleton(typeof(Settings), out dependency);
-        settings = dependency as Settings;
+        private Settings settings;
+        private TMP_Dropdown tmpDropdown;
 
-        tmpDropdown = GetComponent<TMP_Dropdown>();
-        tmpDropdown.onValueChanged.AddListener(OnValueChanged);
-        tmpDropdown.itemText.text = settings.resolution.GetValue().ToString();
-    }
+        private void Start()
+        {
+            
+            IDependency dependency;
+            DI.GetSingleton(typeof(Settings), out dependency);
+            settings = dependency as Settings;
         
-    public void OnValueChanged(int newValue)
-    {
-        SenseiGameJam.SettingsPack.Resolution resolution;
-        Enum.TryParse("Screen_" + tmpDropdown.options[newValue].text, out resolution);
-        settings.resolution.SetValue(resolution);
+            
+            tmpDropdown = GetComponent<TMP_Dropdown>();
+            tmpDropdown.onValueChanged.AddListener(OnValueChanged);
+            tmpDropdown.SetValueWithoutNotify(settings.intputRes);
+        }
+        
+        public void OnValueChanged(int newValue)
+        {
+            SenseiGameJam.SettingsPack.Resolution resolution;
+            Enum.TryParse("Screen_" + tmpDropdown.options[newValue].text, out resolution);
+            settings.resolution.SetValue(resolution);
+            settings.intputRes = newValue;
+        }
     }
-}
