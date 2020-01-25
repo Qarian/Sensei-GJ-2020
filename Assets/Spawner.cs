@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
             kittyPosition.x += Random.Range(-10, 11);
             kittyPosition.y += Random.Range(-5, 5);
             Transform kittyTransform =  Instantiate(kitties, _spawnerTransform).transform;
-            kittyTransform.position = kittyPosition; 
+            kittyTransform.position = kittyPosition;
         }
     }
     

@@ -14,6 +14,7 @@ namespace SenseiGameJam.SettingsPack
         public ISetting<int> cats;
         public InputSettings input;
         public ISetting<bool> specialSettings;
+        public Progress progress = new Progress();
 
         // Start is called before the first frame update
         void Start()
@@ -58,6 +59,11 @@ namespace SenseiGameJam.SettingsPack
             {
                 Debug.LogError("specialSettings not set");
             }
+        }
+
+        public bool CanProceed()
+        {
+            return progress.CanProceed(bloom.GetValue(), intputRes);
         }
     }
 }
