@@ -21,6 +21,6 @@ public class AutoSettingsPanel : MonoBehaviour
     {
         settings.resolution.SetValue(SenseiGameJam.SettingsPack.Resolution.Screen_640x480);
         settings.bloom.SetValue(50);
-
+        gameObject.SetActive(false);
     }
 }
