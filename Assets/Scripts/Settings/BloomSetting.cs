@@ -6,6 +6,7 @@ namespace SenseiGameJam.SettingsPack
 {
     public class BloomSetting : MonoBehaviour, ISetting<float>
     {
+        [SerializeField]
         float value = 0;
 
         public void FixedUpdateSetting()

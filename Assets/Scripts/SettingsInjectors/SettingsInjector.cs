@@ -22,6 +22,7 @@ namespace SenseiGameJam.SettingsInjectorsPack
             settings.resolution = gameObject.AddComponent<ResolutionSetting>() as ResolutionSetting;
             settings.cats = gameObject.AddComponent<CatsSetting>() as CatsSetting;
             settings.specialSettings = gameObject.AddComponent<SpecialSettingsSetting>() as SpecialSettingsSetting;
+            CreateInput();
         }
 
         void CreateInput()
