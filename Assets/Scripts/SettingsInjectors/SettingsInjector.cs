@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SenseiGameJam.SettingsPack;
+using UnityEngine.Rendering.PostProcessing;
 
 namespace SenseiGameJam.SettingsInjectorsPack
 {
@@ -9,6 +10,11 @@ namespace SenseiGameJam.SettingsInjectorsPack
     {
         public Settings settings;
         public InputSettings input;
+
+        [SerializeField]
+        Material resolutionMaterial;
+        [SerializeField]
+        PostProcessProfile postProcess;
 
         // Start is called before the first frame update
         void Start()
@@ -31,7 +37,9 @@ namespace SenseiGameJam.SettingsInjectorsPack
         void CreateSettings()
         {
             settings.bloom = settings.gameObject.AddComponent<BloomSetting>() as BloomSetting;
+            ((BloomSetting)settings.bloom).SetProfile(postProcess);
             settings.resolution = settings.gameObject.AddComponent<ResolutionSetting>() as ResolutionSetting;
+            ((ResolutionSetting)settings.resolution).SetMaterial(resolutionMaterial);
             settings.cats = settings.gameObject.AddComponent<CatsSetting>() as CatsSetting;
             settings.specialSettings = settings.gameObject.AddComponent<SpecialSettingsSetting>() as SpecialSettingsSetting;
             CreateInput();
