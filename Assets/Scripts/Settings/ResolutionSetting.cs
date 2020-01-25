@@ -15,7 +15,6 @@ namespace SenseiGameJam.SettingsPack
         private void Start()
         {
             material = Resources.Load("Material/Blur", typeof(Material)) as Material;
-            Debug.Log(material);
             material.SetFloat("_Size", (float)value);
         }
 
