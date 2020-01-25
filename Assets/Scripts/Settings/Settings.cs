@@ -7,6 +7,7 @@ namespace SenseiGameJam.SettingsPack
 {
     public class Settings : MonoBehaviour, IDependency
     {
+        public ISetting<bool> autoSettings;
         public ISetting<float> bloom;
         public ISetting<Resolution> resolution;
         public ISetting<int> cats;
@@ -24,7 +25,7 @@ namespace SenseiGameJam.SettingsPack
         // Update is called once per frame
         void Update()
         {
-            if(bloom != null)
+            if (bloom != null)
             {
                 bloom.UpdateSetting();
             }

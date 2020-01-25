@@ -3,12 +3,13 @@ using UnityEngine.UI;
 using SenseiGameJam.DependencyInjection;
 using SenseiGameJam.SettingsPack;
 
-public class SliderSettings : MonoBehaviour
+[RequireComponent(typeof(Toggle))]
+public class ToggleSettings : MonoBehaviour
 {
     [SerializeField]
     string settingName = default;
     private Settings settings;
-    private Slider slider;
+    private Toggle slider;
 
     private void Start()
     {
@@ -16,21 +17,20 @@ public class SliderSettings : MonoBehaviour
         DI.GetSingleton(typeof(Settings), out dependency);
         settings = dependency as Settings;
 
-        slider = GetComponent<Slider>();
+        slider = GetComponent<Toggle>();
         switch (settingName)
         {
-            case "Bloom":
-                slider.onValueChanged.AddListener(OnValueChangedBloom);
+            case "Auto settings":
+                slider.onValueChanged.AddListener(OnValueChangedAutoSettings);
                 break;
             default:
                 Debug.LogError("Wrong name for slider: " + settingName);
                 break;
         }
-        
     }
 
-    public void OnValueChangedBloom(float newValue)
+    public void OnValueChangedAutoSettings(bool newValue)
     {
-        settings.bloom.SetValue(newValue);
+        settings.autoSettings.SetValue(newValue);
     }
 }
