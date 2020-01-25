@@ -51,7 +51,7 @@ namespace SenseiGameJam.SettingsPack
 
         public void StartSetting()
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         public void UpdateSetting()

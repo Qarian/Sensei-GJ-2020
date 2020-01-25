@@ -15,12 +15,20 @@ public class AutoSettingsPanel : MonoBehaviour
         settings = dependency as Settings;
         if (settings.autoSettings.GetValue() == false)
             gameObject.SetActive(false);
+        else
+        {
+            settings.input.jump.SetValue(KeyCode.None);
+        }
     }
 
     public void ClosePanel()
     {
-        settings.resolution.SetValue(SenseiGameJam.SettingsPack.Resolution.Screen_640x480);
-        settings.bloom.SetValue(50);
-        gameObject.SetActive(false);
+        if(settings.autoSettings.GetValue())
+        {
+            settings.resolution.SetValue(SenseiGameJam.SettingsPack.Resolution.Screen_640x480);
+            settings.intputRes = 0;
+            settings.bloom.SetValue(50);
+            gameObject.SetActive(false);
+        }
     }
 }

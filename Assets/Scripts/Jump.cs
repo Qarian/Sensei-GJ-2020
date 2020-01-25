@@ -8,7 +8,6 @@ using SenseiGameJam.SettingsPack;
 
 public class Jump : MonoBehaviour
 {
-    KeyCode code = KeyCode.None;
     Settings settings = null;
     [SerializeField]
     private float jumpHeight = 10.0f;
@@ -26,18 +25,22 @@ public class Jump : MonoBehaviour
         settings = (Settings)dep;
         if(settings != null)
         {
-            code = settings.input.jump.GetValue();
+            jumpKey = settings.input.jump.GetValue();
         }
         else
         {
-            code = KeyCode.None;
+            jumpKey = KeyCode.None;
         }
         rb = gameObject.GetComponent<Rigidbody2D>();
+        if(!settings.CanProceed())
+        {
+            rb.gravityScale = 0;
+        }
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(code))
+        if(Input.GetKeyDown(jumpKey) && settings.CanProceed() && settings.autoSettings.GetValue() == false)
         {
             rb.velocity = jumpHeight * jumpDir;
         }

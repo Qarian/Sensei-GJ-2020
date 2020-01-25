@@ -993,7 +993,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1501398385}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999962
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1986,6 +1986,16 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7924096278647814534, guid: 7600599c6435bbc4bb8f7c3fe2c15e0d,
+        type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7924096278647814534, guid: 7600599c6435bbc4bb8f7c3fe2c15e0d,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 2500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7600599c6435bbc4bb8f7c3fe2c15e0d, type: 3}
 --- !u!224 &1309161194 stripped
@@ -1994,6 +2004,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1309161193}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1309161195 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1651222985751834805, guid: 7600599c6435bbc4bb8f7c3fe2c15e0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1309161193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1309161196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309161195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e9598dca00d934b863c2a19967a7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingName: Kittens
 --- !u!1 &1365687736 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1651222985751834805, guid: 7600599c6435bbc4bb8f7c3fe2c15e0d,
@@ -2901,6 +2930,25 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1967492770}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1967492772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1651222985751834805, guid: 7600599c6435bbc4bb8f7c3fe2c15e0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1967492770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1967492773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967492772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e9598dca00d934b863c2a19967a7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingName: Gravity
 --- !u!1 &2094711427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,7 +2988,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0000024293322}
+  m_AnchoredPosition: {x: 0, y: 0.000009519477}
   m_SizeDelta: {x: 0, y: 781.1}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2094711429
