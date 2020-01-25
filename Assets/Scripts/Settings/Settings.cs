@@ -7,6 +7,7 @@ namespace SenseiGameJam.SettingsPack
 {
     public class Settings : MonoBehaviour, IDependency
     {
+        public int intputRes = 0;
         public ISetting<float> bloom;
         public ISetting<Resolution> resolution;
         public ISetting<int> cats;
