@@ -16,6 +16,7 @@ namespace SenseiGameJam.SettingsPack
         private void Start()
         {
             profile.GetSetting<Bloom>().intensity.value = value;
+            
         }
 
         public void FixedUpdateSetting()

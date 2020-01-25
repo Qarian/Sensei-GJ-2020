@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using SenseiGameJam.DependencyInjection;
 using UnityEngine;
 
 namespace SenseiGameJam.SettingsPack
 {
-    public class Settings : MonoBehaviour
+    public class Settings : MonoBehaviour, IDependency
     {
         public ISetting<float> bloom;
         public ISetting<Resolution> resolution;
@@ -15,6 +16,8 @@ namespace SenseiGameJam.SettingsPack
         // Start is called before the first frame update
         void Start()
         {
+            Debug.Log("Settings REGISTERED");
+            DI.RegisterSingleton(typeof(Settings),this);
             DontDestroyOnLoad(this.gameObject);
         }
 
