@@ -20,8 +20,6 @@ namespace SenseiGameJam.SettingsInjectorsPack
         void Start()
         {
             FindOrCreateSettings();
-            CreateSettings();
-            StartSettings();
         }
 
         void FindOrCreateSettings()
@@ -29,8 +27,11 @@ namespace SenseiGameJam.SettingsInjectorsPack
             settings = GameObject.FindObjectOfType<Settings>();
             if(settings == null)
             {
+                Debug.Log("Create new settings");
                 GameObject settingsObject = new GameObject("Settings", components: typeof(Settings));
                 settings = settingsObject.GetComponent<Settings>();
+                CreateSettings();
+                StartSettings();
             }
         }
 
