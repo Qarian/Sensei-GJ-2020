@@ -4,8 +4,7 @@ using SenseiGameJam.SettingsPack;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Assertions;
-using Resolution = UnityEngine.Resolution;
+
 
     public class DropDownSettings : MonoBehaviour
     {
