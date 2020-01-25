@@ -9,17 +9,19 @@ namespace SenseiGameJam.DependencyInjection
         static Dictionary<System.Type, IDependency> singletons;
         static readonly EmptyDependency emptyDependency = new EmptyDependency();
 
-        public static IDependency GetSingleton(System.Type type)
+        public static bool GetSingleton(System.Type type, out IDependency dependency)
         {
-            singletons.TryGetValue(type, out IDependency result);
-            if(result != null)
-            {
-                return result;
-            }
-            else
-            {
-                return emptyDependency;
-            }
+            return singletons.TryGetValue(type, out dependency);
+        }
+
+        public static void RegisterSingleton(System.Type type, IDependency dependency)
+        {
+            singletons.Add(type, dependency);
+        }
+
+        public static bool UnregisterSingleton(System.Type type)
+        {
+            return singletons.Remove(type);
         }
     }
 }
