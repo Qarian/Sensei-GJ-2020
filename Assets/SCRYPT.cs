@@ -5,7 +5,7 @@ using S = UnityEngine.SerializeField;
 
 public class SCRYPT : MonoBehaviour
 {
-    [S] Animator animator;
+    [S] Animator animator = default;
 
     // Start is called before the first frame update
     void Start()
