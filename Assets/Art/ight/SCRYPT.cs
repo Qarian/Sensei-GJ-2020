@@ -30,7 +30,7 @@ public class SCRYPT : MonoBehaviour
 
         if(enemiestogo<=0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(wait());
         }
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
          transform.position =  new Vector3( transform.position.x, transform.position.y, 0);
@@ -42,6 +42,12 @@ public class SCRYPT : MonoBehaviour
              bc2.enabled = true;
          }
 
+    }
+    
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
