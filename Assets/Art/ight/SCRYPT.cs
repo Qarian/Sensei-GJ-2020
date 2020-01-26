@@ -13,11 +13,14 @@ public class SCRYPT : MonoBehaviour
 
     [S] BoxCollider2D bc2;
 
+    [S] AudioSource a;
+
     public int enemiestogo = 2;
     private void Start() {
         bc2= gameObject.GetComponent<BoxCollider2D>();
         animator = gameObject.GetComponent<Animator>();
         cameraAnimator = Camera.main.gameObject.GetComponent<Animator>();
+        a = gameObject.GetComponent<AudioSource>();
 
         
     }
@@ -35,6 +38,7 @@ public class SCRYPT : MonoBehaviour
          if(Input.GetKeyDown(KeyCode.Mouse0))
          {
              animator.SetTrigger("trigger");
+             a.Play();
              bc2.enabled = true;
          }
 
