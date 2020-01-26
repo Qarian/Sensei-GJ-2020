@@ -6,7 +6,17 @@ namespace SenseiGameJam.SettingsPack
 {
     public class ResolutionSetting : MonoBehaviour, ISetting<Resolution>
     {
-        Resolution value;
+        [SerializeField]
+        Resolution value = Resolution.Screen_1920x1440;
+
+        [SerializeField]
+        Material material;
+
+        private void Start()
+        {
+            material = Resources.Load("Material/Blur", typeof(Material)) as Material;
+            material.SetFloat("_Size", (float)value);
+        }
 
         public void FixedUpdateSetting()
         {
@@ -31,16 +41,22 @@ namespace SenseiGameJam.SettingsPack
         public void SetValue(Resolution value)
         {
             this.value = value;
+            material.SetFloat("_Size", (float) value);
+        }
+
+        public void SetMaterial(Material material)
+        {
+            this.material = material;
         }
 
         public void StartSetting()
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         public void UpdateSetting()
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
     }
 }

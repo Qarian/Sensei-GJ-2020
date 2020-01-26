@@ -6,7 +6,7 @@ namespace SenseiGameJam.SettingsPack
 {
     public class CatsSetting : MonoBehaviour, ISetting<int>
     {
-        int value;
+        int value = 650;
 
         public void FixedUpdateSetting()
         {
@@ -35,12 +35,12 @@ namespace SenseiGameJam.SettingsPack
 
         public void StartSetting()
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
 
         public void UpdateSetting()
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
         }
     }
 }
