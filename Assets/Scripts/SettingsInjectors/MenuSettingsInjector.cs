@@ -14,13 +14,15 @@ public class MenuSettingsInjector : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
     public Toggle autoSettings;
     public Slider kittensSlider;
-    public Slider gravitySlider;
+    public bool gravitySlider;
 
     private void Start()
     {
         IDependency dep;
         DI.GetSingleton(typeof(Settings), out dep);
         settings = (Settings)dep;
+
+        autoSettings.isOn = false; settings.autoSettings.GetValue();
         jumpButton.text = settings.input.jump.GetValue().ToString();
         bloomSlider.value = settings.bloom.GetValue();
         resolutionDropdown.itemText.text = settings.resolution.GetValue().ToString();

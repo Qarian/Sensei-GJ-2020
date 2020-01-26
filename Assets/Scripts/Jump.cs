@@ -32,15 +32,13 @@ public class Jump : MonoBehaviour
             jumpKey = KeyCode.None;
         }
         rb = gameObject.GetComponent<Rigidbody2D>();
-        if(!settings.CanProceed())
-        {
+        if (!settings.gravity)
             rb.gravityScale = 0;
-        }
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(jumpKey) && settings.CanProceed() && settings.autoSettings.GetValue() == false)
+        if(Input.GetKeyDown(jumpKey))
         {
             rb.velocity = jumpHeight * jumpDir;
         }

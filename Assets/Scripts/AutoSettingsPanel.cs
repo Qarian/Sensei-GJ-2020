@@ -6,6 +6,8 @@ using SenseiGameJam.SettingsPack;
 
 public class AutoSettingsPanel : MonoBehaviour
 {
+    [SerializeField]
+    Canvas canvas;
     Settings settings;
 
     void Start()
@@ -13,13 +15,21 @@ public class AutoSettingsPanel : MonoBehaviour
         IDependency dependency;
         DI.GetSingleton(typeof(Settings), out dependency);
         settings = dependency as Settings;
+
+
         if (settings.autoSettings.GetValue() == false)
+        {
             gameObject.SetActive(false);
+            canvas.sortingOrder = -1;
+        }
+            
         else
         {
+            canvas.sortingOrder = 1;
             settings.input.jump.SetValue(KeyCode.None);
         }
     }
+
 
     public void ClosePanel()
     {
@@ -29,6 +39,7 @@ public class AutoSettingsPanel : MonoBehaviour
             settings.intputRes = 0;
             settings.bloom.SetValue(50);
             gameObject.SetActive(false);
+            canvas.sortingOrder = -1;
         }
     }
 }

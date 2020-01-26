@@ -21,6 +21,11 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
