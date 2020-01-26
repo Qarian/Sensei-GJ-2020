@@ -10,6 +10,11 @@ public class SliderSettings : MonoBehaviour
     private Settings settings;
     private Slider slider;
 
+    public void SetNumberKittens()
+    {
+        Settings.settings.catsNumber = (int)transform.GetComponent<Slider>().value;
+    }
+
     private void Start()
     {
         IDependency dependency;
@@ -24,8 +29,11 @@ public class SliderSettings : MonoBehaviour
                 slider.onValueChanged.AddListener(OnValueChangedBloom);
                 break;
             case "Kittens":
-                slider.value = settings.bloom.GetValue();
+                slider.value = settings.cats.GetValue();
                 slider.onValueChanged.AddListener(OnValueChangedKittens);
+                break;
+            case "Gravity":
+
                 break;
             default:
                 Debug.LogError("Wrong name for slider: " + settingName);

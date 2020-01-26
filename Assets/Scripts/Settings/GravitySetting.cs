@@ -1,19 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SenseiGameJam.SettingsPack
 {
-    public class CatsSetting : MonoBehaviour, ISetting<int>
+    public class GravitySetting : MonoBehaviour, ISetting<bool>
     {
-        int value = 650;
+        bool value;
+
+        public void SetGravity()
+        {
+            Settings.settings.gravity = transform.GetComponent<Toggle>().isOn;
+            value = transform.GetComponent<Toggle>().isOn;
+        }
 
         public void FixedUpdateSetting()
         {
             throw new System.NotImplementedException();
         }
 
-        public int GetValue()
+        public bool GetValue()
         {
             return value;
         }
@@ -28,19 +35,20 @@ namespace SenseiGameJam.SettingsPack
             throw new System.NotImplementedException();
         }
 
-        public void SetValue(int value)
+        public void SetValue(bool value)
         {
             this.value = value;
         }
 
         public void StartSetting()
         {
-            //throw new System.NotImplementedException();
+            throw new System.NotImplementedException();
         }
 
         public void UpdateSetting()
         {
-            //throw new System.NotImplementedException();
+            throw new System.NotImplementedException();
         }
     }
 }
+
