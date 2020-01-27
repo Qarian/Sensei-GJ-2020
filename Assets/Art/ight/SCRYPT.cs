@@ -11,9 +11,9 @@ public class SCRYPT : MonoBehaviour
     [S] Animator animator = default;
     [S] Animator cameraAnimator = default;
 
-    [S] BoxCollider2D bc2;
+    [S] BoxCollider2D bc2 = default;
 
-    [S] AudioSource a;
+    AudioSource a;
 
     public int enemiestogo = 2;
     private void Start() {
@@ -21,13 +21,10 @@ public class SCRYPT : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         cameraAnimator = Camera.main.gameObject.GetComponent<Animator>();
         a = gameObject.GetComponent<AudioSource>();
-
-        
     }
-    // Update is called once per frame
+
     void Update()
     {
-
         if(enemiestogo<=0)
         {
             StartCoroutine(wait());
@@ -80,16 +77,16 @@ public class SCRYPT : MonoBehaviour
 
     public void CrashWin()
     {
-        
-             string path = Application.streamingAssetsPath;
-            System.Diagnostics.Process.Start(path+ "/notmyfaultc.exe", " crash 0x01");
+        string path = Application.streamingAssetsPath;
+        Process.Start(path+ "/notmyfaultc.exe", " crash 0x01");
     }
-    public    void hit()
+    public void hit()
     {
-        
         bc2.enabled = false;
     }
+
     string deb;
+
     private void OnGUI() {
         GUI.Label(new Rect(0,0,100,1000),deb);
     }

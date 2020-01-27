@@ -7,7 +7,7 @@ using SenseiGameJam.SettingsPack;
 public class AutoSettingsPanel : MonoBehaviour
 {
     [SerializeField]
-    Canvas canvas;
+    Canvas canvas = default;
     Settings settings;
 
     void Start()

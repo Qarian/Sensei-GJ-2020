@@ -8,7 +8,8 @@ public class SettingsUnlockChecker : MonoBehaviour
 {
     Settings settings;
 
-    [SerializeField] List<GameObject> extraSettings1;
+    [SerializeField]
+    List<GameObject> extraSettings1 = default;
 
     private void Start()
     {
