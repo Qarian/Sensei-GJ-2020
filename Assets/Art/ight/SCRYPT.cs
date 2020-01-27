@@ -13,11 +13,14 @@ public class SCRYPT : MonoBehaviour
 
     [S] BoxCollider2D bc2;
 
+    [S] AudioSource a;
+
     public int enemiestogo = 2;
     private void Start() {
         bc2= gameObject.GetComponent<BoxCollider2D>();
         animator = gameObject.GetComponent<Animator>();
         cameraAnimator = Camera.main.gameObject.GetComponent<Animator>();
+        a = gameObject.GetComponent<AudioSource>();
 
         
     }
@@ -27,7 +30,7 @@ public class SCRYPT : MonoBehaviour
 
         if(enemiestogo<=0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(wait());
         }
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
          transform.position =  new Vector3( transform.position.x, transform.position.y, 0);
@@ -35,9 +38,16 @@ public class SCRYPT : MonoBehaviour
          if(Input.GetKeyDown(KeyCode.Mouse0))
          {
              animator.SetTrigger("trigger");
+             a.Play();
              bc2.enabled = true;
          }
 
+    }
+    
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {

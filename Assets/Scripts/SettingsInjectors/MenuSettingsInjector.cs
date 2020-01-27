@@ -22,7 +22,7 @@ public class MenuSettingsInjector : MonoBehaviour
         DI.GetSingleton(typeof(Settings), out dep);
         settings = (Settings)dep;
 
-        autoSettings.isOn = false; settings.autoSettings.GetValue();
+        autoSettings.isOn = settings.autoSettings.GetValue();
         jumpButton.text = settings.input.jump.GetValue().ToString();
         bloomSlider.value = settings.bloom.GetValue();
         resolutionDropdown.itemText.text = settings.resolution.GetValue().ToString();
